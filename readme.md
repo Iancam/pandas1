@@ -2,6 +2,8 @@
 
 _taken from https://raw.githubusercontent.com/msyamkumar/cs220-f20-projects/master/p12/README.md_
 
+Before you start the following assignment, you need to have some understanding of Pandas. You can [start off here](https://www.kaggle.com/residentmario/creating-reading-and-writing), or, if you feel ready to jump in to something a bit faster paced, [use this cheat sheet here](https://www.educative.io/blog/pandas-cheat-sheet).
+
 ## Learning Objectives
 
 In this project, you will
@@ -24,18 +26,15 @@ To start, clone the repository. `git clone github.com/iancam/pandas1` You'll do 
 
 # Data
 
-For this project, you'll be using one large JSON file with statistics
-about 174 countries adapted from
+For this project, you'll be using one large JSON file with statistics from
+about 174 countries. We found them
 [here](https://www.kaggle.com/fernandol/countries-of-the-world).
-and you will also extract data from a snapshot of
+You will also extract data from a snapshot of
 [this page](http://techslides.com/list-of-countries-and-capitals).
 
-First check these resources:
+To get started, open up main, and run the notebook spot, and then the second. Great! What you should see are our two data tables
 
-- https://raw.githubusercontent.com/msyamkumar/cs220-f20-projects/master/p12/countries.json
-- http://techslides.com/list-of-countries-and-capitals
-
-Some of the columns require a little extra explanation:
+Some of the columns in the data require a little extra explanation:
 
 - Area: measured in square miles
 - Coastline: Ratio of coast to area
@@ -45,53 +44,13 @@ Some of the columns require a little extra explanation:
 - Literacy: (out of 100%)
 - Phones: Number of phones per 1000 people
 
-**DISCLAIMER**: This dataset has been taken from the source without any modifications. Any current information in the world affairs, including political implications haven't been represented in this dataset accurately. Please consider this as a synthetic dataset and not a real-world representation of the country information.
+**DISCLAIMER**: This data is probably wrong in a lot of ways. We're using it to practice pandas.
 
 # Testing
 
-For answers involving a DataFrame, `test.py` compares your tables to
-those in `expected.html`, so take a moment to open that file in your
-browser.
+All the right answers can be found in `test.py`. If you're wondering if you did the right thing, take a look over there.
 
-`test.py` doesn't care if you have extra rows or columns, and it
-doesn't care about the order of the rows or columns. However, you
-must have the correct values at each index/column location shown in
-`expected.html`.
-
-For P12, `test.py` is pickier than it has been. In addition to
-checking for incorrect answers, it will also check for a few common
-kinds of bad coding style. You should look for linting messages at the bottom
-of the output, for example:
-
-```
-Linting Summary:
-  Warning Messages:
-    cell: 1, line: 4 - Redefining built-in 'id'
-    cell: 1, line: 3 - Reimport 'numpy' (imported line 2)
-    cell: 1, line: 5 - Unnecessary pass statement
-    cell: 1, line: 2 - Unused import numpy
-```
-
-In this case, `test.py` will deduct 1 point per linter message because of
-bad style, and at most deduct 10 points. For more information about the linter
-as well as how to run the full linter to see all of the automatically generated
-advice and feedback, please check out the [linting README](https://github.com/tylerharter/cs301-projects/tree/master/linter).
-
-# Setup
-
-Use the `download` function from [lab-p12](https://github.com/msyamkumar/cs220-f20-projects/blob/master/lab-p12) to pull the data from here (do not manually download): https://raw.githubusercontent.com/msyamkumar/cs220-f20-projects/master/p12/countries.json
-and store it in `countries.json`. Once you have created the file, create a Dataframe `countries` from this file.
-
-**Warning**: 1. Make sure your `download` function does not download the file if it already exists. The TAs will manually deduct points otherwise. 2. Make sure you use `download` function to pull the data instead of manually download. Otherwise you may get a zero.
-
-_Hint_: `pd.read_json('countries.json')` will return a DataFrame by reading from
-the JSON file. If the file contains lists of dictionaries, each dictionary will be a row in the DataFrame.
-
-## Questions
-
-Before you proceed, make sure that `countries.head()` displays the following:
-
-<img src="imgs/1-1.PNG" width="1000">
+# Questions
 
 #### #Q1: How many countries do we have in our dataset?
 
@@ -102,11 +61,6 @@ DataFrame. You can add all the values in a Series with the `.sum()`
 method.
 
 ---
-
-Use the `download` function to download https://raw.githubusercontent.com/msyamkumar/cs220-f20-projects/master/p12/capitals.json
-and store it in `capitals.json`. Create a DataFrame named `capitals` from this file. Before you proceed, make sure that `capitals.head()` displays the following:
-
-<img src="imgs/1-2.PNG" width="300">
 
 Use `capitals` and `countries` DataFrames to answer the following questions.
 
@@ -172,8 +126,6 @@ If you decide to implement it yourself (it's fun!), here are some tips:
 #### #Q12: What is the distance between Germany and Norway?
 
 For the coordinates of a country, use its capital.
-
-DISCLAIMER: This dataset has been taken from the source without any modifications. Any current information in the world affairs, including political implications haven't been represented in this dataset accurately. Please consider this as a synthetic dataset and not a real-world representation of the country information.
 
 #### #Q13: What are the distances between Italy, United Kingdom and Germany?
 
